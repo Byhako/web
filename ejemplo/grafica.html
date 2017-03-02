@@ -1,0 +1,38 @@
+<DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <title>Funciones</title>
+  </head>
+
+  <body>
+    <p><h2>Grafica Trigonometrica</h2></p>
+    <p>¿Que deseas dibujar?</p>
+
+    <p>
+    <input type="radio" name="f" checked="checked" id="seno"/> Seno
+    <input type="radio" name="f" checked="checked" id="coseno"/> Coseno
+	  <input type="radio" name="f" checked="checked" id="tangente"/> Tangente
+    </p>
+
+    <p><br/>¿De que color?</p>
+
+    <p>
+    <input type="radio" name="c" checked="checked" id="negro"/> Negro
+    <input type="radio" name="c" checked="checked" id="rojo"/> Rojo
+	  <input type="radio" name="c" checked="checked" id="azul"/> Azul
+    <input type="radio" name="c" checked="checked" id="verde"/> Verde
+    <input type="radio" name="c" checked="checked" id="amarillo"/> Amarrillo
+    <input type="radio" name="c" checked="checked" id="marron"/> Marron
+    </p>
+
+    <p>
+    <input type="text" placeholder="Numero de puntos" id="Npuntos"/>&nbsp
+    <input type="button" value="Dibujar" id="b_dibujar"/>&nbsp
+    <input type="button" value="Borrar" id="b_borrar"/>
+    </p>
+    <canvas width="700" height="300" id="escena"></canvas>
+
+    <script src="grafica.js"></script>
+  </body>
+</html>

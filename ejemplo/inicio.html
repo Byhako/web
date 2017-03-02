@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+
+		<title>Basico</title>
+
+	</head>
+
+	<body>
+		<p><br><img src="images/UdeA.jpg" alt="Logo udea" title="Universidad de Antioquia" width="150" height="200" align="right"></p>
+	<!-- 
+		Alinear Imagenes:
+		right, letf, top, middle, bottom
+
+		Relosucion correcta -> 72 pixeles/pulgada**2
+		-->
+		<h1 id="inicio">Primer grado</h1>
+		<h2>Segundo grado</h2>
+		<h3>Tercer grado</h3>
+		<h4>Cuarto grado</h4>
+		<h5>Quinto grado</h5>
+		<h6>Sexto grado</h6>
+
+		<p><b>Texto en negrita</b>, <i>Texto en italica</i></p>
+		<p><strong>Importante: </strong>El contenido aqui es de gran importancia.</p>
+		<p>El dijo con "enfasis": <em>&#161Lo logre!</em></p>
+		<p><b>Superindices: </b> 2<sup>5</sup> = 32</p>
+		<p><b>Subindices: </b> Log<sub>2</sub> 32 = 5</p>
+
+		<p>Una linea<br />una nueva linea</p>
+
+		<hr/>
+		<b><h3>CITAS:</h3></b>
+		<blockquote cite="http://www.htmlandcssbook.com/code-samples/"><p>Uso de la etiqueta blockquote para citar.</p></blockquote>
+		<p>Cita hecha dentro de una linea, <q>una cita hecha con etiqueta q.</q></p>
+		<p>"Una cita con comillas dobles a mano."</p>
+
+		<p>La autora del libro declaro en rueda de prensa:</p>
+		<blockquote>
+			<p>A pesar de los que muchos piensan, el libro no es autobiografico, aunque podria encajar en la mayor parte de mi vida</p>
+			<footer>
+				<cite><a href="https://ejemplo.es/noticias/declariones-de-maria-alvarez">Maria Alvarez, autora del libro "Bla bla bla"</a></cite>
+			</footer>
+		</blockquote>
+
+		<hr/>
+
+		<p><abbr title="National Aeronautics and Space
+	  Administration">NASA</abbr> Hace cosas geniales.</p>
+	<p>Definicion: Un <dfn>camion</dfn> es un vehiculo de carga.</p>
+
+	<address><p>Informacion del autor de la pagina</p></address>
+
+	<p>It was the <del>worst</del> <ins>best</ins> idea she had ever had.</p>
+	<p>Mi <s>etiteta</s> etiqueta s</p>
+	
+	<hr/>
+
+	<p><h2>Mi lista ordenada</h2></p>
+	<ol>
+		<li>Amarillo</li>
+		<li>Azul</li>
+		<li>Rojo</li>
+	</ol>
+
+	<p><h2>Mi lista <ins>No</ins> ordenada</h2></p>
+	<ul>
+		<li>Grecia</li>
+		<li>Mexico</li>
+		<li>Canada</li>
+	</ul>
+	
+	<!-- **************************************************** -->
+	
+	<p><h3>Lista de definiciones</h3></p>
+	<dl>
+
+		<dt>Colombia:</dt>
+		<dd>Hermoso pais suramericano con hermosas mujeres.</dd>
+		<br/>
+		<dt>China:</dt>
+		<dd>Pais asiatico donde todo lo falsifican.</dd>
+
+	</dl>
+
+	<hr/>
+	<!-- **************************************************** -->
+
+	<p><h4>Link para enviar correo electronico: <a href="mailto:eldragondera1@gmail.com">E-mail Ruben</a></h4></p>
+	
+	<h4>Link que abre en una nueva ventana: <abbr title="Abre en nueva ventana"><a href="https://www.udea.edu.co" target="_blank">Universidad</a></abbr></h4>
+
+	<h3>Almacenes de imagenes</h3>
+	<ul>
+	<li><a href="https://www.istockphoto.com" target="_blank">istockphoto</a></li>
+	<li><a href="https://www.gettyimages.com" target="_blank">gettyimages</a></li>
+	<li><a href="https://www.fotolia.com" target="_blank">fotolia</a></li>
+	</ul>
+
+	<hr>
+<!-- **************************************************** -->
+	<h3>Figura con leyenda</h3>
+	<figure>
+		<img src="images/gauss.png" alt="campana de gauss">
+		<figcaption>Campana de Gauss colorida 3D</figcaption>
+	</figure>
+
+	<hr>
+<!-- **************************************************** -->
+	<h2>Tablas</h2>
+
+	<p>Tabla basica</p>
+	<table>
+	<tr>
+		<td>15</td>
+		<td>15</td>
+		<td>30</td>
+	</tr>
+	<tr>
+		<td>45</td>
+		<td>60</td>
+		<td>45</td>
+	</tr>
+	<tr>
+		<td>60</td>
+		<td>90</td>
+		<td>90</td>
+	</tr>
+	</table>
+
+	<br>
+	<p>Tabla con cabeceras</p>
+	<table>
+	<tr>
+		<th></th>  <!-- Cabeceras -->
+		<th scope="col">Saturday</th>
+		<th scope="col">Sunday</th>
+	</tr>
+	<tr>
+		<th scope="row">Tickets sold:</th>
+		<td>120</td>
+		<td>135</td>
+	</tr>
+	<tr>
+		<th scope="row">Total sales:</th>
+		<td>$600</td>
+		<td>$675</td>
+	</tr>
+	</table>
+
+	<p><br>Celdas expandidas</p>
+	<table>
+	<tr>
+		<th></th>
+		<th>9am</th>
+		<th>10am</th>
+		<th>11am</th>
+		<th>12am</th>
+	</tr>
+	<tr>
+		<th>Monday</th>
+		<td colspan="2">Geography</td>
+		<td rowspan="2">Math</td>
+		<td>Art</td>
+	</tr>
+	<tr>
+		<th>Tuesday</th>
+		<td colspan="3">Gym</td>
+		<td>Home Ec</td>
+	</tr>
+	</table>
+
+	<p><br>Tabla compleja</p>
+
+	<table width="400" cellpadding="10" cellspacing="10" border="2" bgcolor="#efefef">
+
+	<thead>
+		<tr>
+			<th bgcolor=#F6CECE>Date</th>
+			<th bgcolor="#CEF6EC">Income</th>
+			<th bgcolor=#D8CEF6>Expenditure</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<tr>
+			<th bgcolor=#F6CECE>1st January</th>
+			<td bgcolor=#CEF6EC>250</td>
+			<td bgcolor=#D8CEF6>36</td>
+		</tr>
+		<tr>
+			<th bgcolor=#F6CECE>2nd January</th>
+			<td bgcolor=#CEF6EC>285</td>
+			<td bgcolor=#D8CEF6>48</td>
+		</tr>
+		<!-- additional rows as above -->
+		<tr>
+			<th bgcolor=#F6CECE>31st January</th>
+			<td bgcolor=#CEF6EC>129</td>
+			<td bgcolor=#D8CEF6>64</td>
+		</tr>
+	</tbody>
+	
+	<tfoot>
+		<tr>
+			<td bgcolor=#F6CECE></td>
+			<td bgcolor=#CEF6EC>7824</td>
+			<td bgcolor=#D8CEF6>1241</td>
+		</tr>
+	</tfoot>
+
+	</table>
+
+<!-- **************************************************** -->
+	<h2><hr>Formulario</h2>
+
+	<form action="http://www.example.com/subscribe.php" method="get">
+		<p>Usuario: <input type="text" name="username" size="15" maxlength="30">
+		&nbsp&nbspContrasena: <input type="password" name="password" size="15" 
+		maxlength="30"></p>
+	
+	<p>Ingresa tus comentarios:</p>
+	<textarea name="comentario" cols="30" rows="5" placeholder="Comentario"></textarea>
+	
+	<br><br>
+	
+	<i>UNICA SELCCION</i>
+
+	<p>&#191Cual es tu lenguaje favorito? &nbsp&nbsp&nbsp&nbsp&nbspLista de paises:<br><br>
+		<input type="radio" name="lenguaje" value="python" checked="checked"/> Python
+		<input type="radio" name="lenguaje" value="java" checked="checked"/> Java
+		<input type="radio" name="lenguaje" value="ruby" checked="checked"/> Ruby
+
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	
+	<select name="paises">
+		<option value="Selecciona">Selecciona</option>
+		<option value="Colombia">Colombia</option>
+		<option value="Peru">Peru</option>
+		<option value="Mexico">Mexico</option>
+		<option value="Chile">Chile</option>
+		<option value="Argentina">Argentina</option>
+	</select>
+	</p>
+
+	<br><br>
+	
+	<i>MULTIPLE SELCCION</i>
+
+	<p>&#191En que ciudad vives? &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspMusica?<br><br>
+	<input type="checkbox" name="ciudad" value="Medellin" /> Medellin
+	<input type="checkbox" name="ciudad" value="Bogota" /> Bogota
+	<input type="checkbox" name="ciudad" value="Armenia" /> Armenia
+
+	&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+
+	<select name="musica" size="2" multiple="multiple">
+		<option value="Rock" selected="selected">Rock</option>
+		<option value="New">New Age</option>
+		<option value="Metal" selected="selected">Metal</option>
+		<option value="Epica">Epica</option>
+	</select>
+	</p>
+
+	</form>
+	<br>
+<!-- No se pueden cargar archivos usando metodo get -->
+	<form action="http://www.example.com/subscribe.php" method="post">
+		<p>Sube tu archivo.</p>
+		<input type="file" name="fileUser" /><br><br>
+		<input type="submit" value="Cargar">
+	</form>
+
+	<br><br>
+	
+	<form action="http://www.example.com/subscribe.php">
+		<p>Suscribe tu nombre a la lista.</p>
+		<input type="text" name="nombre">
+		<input type="submit" name="subscribe" value="Inscribir">
+	</form>
+	
+	<br><br>
+	<!-- imagen en el boton -->
+	<form action="http://www.example.com/subscribe.php">
+		<p>Registra tu nombre:</p>
+		<input type="text" name="nombre">&nbsp&nbsp&nbsp
+		<input type="image" src="images/registro.gif" width="90" height="20">
+	</form>
+	<br>
+
+	<button><img src="images/like.png" width="30" height="30">&nbspMe gusta mucho</button>
+
+	<br><br>
+	<p>Usando etiqueta <em>&#60label&#62</em></p>
+	<label>Age: <input type="text" name="age" /></label><br/ >
+	Gender:
+	<input id="female" type="radio" name="gender" value="f">
+	<label for="female">Female</label>
+	<input id="male" type="radio" name="gender" value="m">
+	<label for="male">Male</label>
+
+	<br><br>
+	<p>Elementos agrupados</p>
+	<fieldset>
+		<legend>Contact details</legend>
+		<label>Email:<br />
+		<input type="text" name="email" /></label><br />
+		<label>Mobile:<br />
+		<input type="text" name="mobile" /></label><br />
+		<label>Telephone:<br />
+		<input type="text" name="telephone" /></label>
+	</fieldset>
+
+	<br><br>
+	<!-- atributo required -->
+	<p>Formulario con Validacion.</p>
+	<form action="http://www.example.com/login/" method="post">
+		<label for="username">Username:</label>
+		<input type="text" name="username" required="required" /></title><br />
+		<label for="password">Password:</label>
+		<input type="password" name="password" required="required" />
+		<input type="submit" value="Submit" />
+	</form>
+
+	<br><br>
+	<p>Entrada de Fechas</p>
+	<form action="http://www.example.com/bookings/" method="post">
+		<label for="username">Fecha de salida:</label>
+		<input type="date" name="depart" />
+		<input type="submit" value="Submit" />
+	</form>
+
+<br><br>
+<p>Entrada de e-mail y URL</p>
+<form action="http://www.example.org/subscribe.php">
+	<p>Please enter your email address:</p>
+	<input type="email" name="email" />
+	<input type="submit" value="Enviar" />
+	<p>Please enter your website address:</p>
+	<input type="url" name="website" />
+	<input type="submit" value="Enviar" />
+</form>
+
+<br><br>
+<p>Busqueda</p>
+<form action="http://www.example.org/search.php">
+	<p>Search:</p>
+	<input type="search" name="search" placeholder="Enter keyword" />
+	<input type="submit" value="Search" />
+</form>
+
+
+
+
+
+	<br/><br/><br/>
+	<a href="#inicio"> Regresar al inicio.</a>
+	<br/>
+	<br/>
+	<p>* * * * *</p>
+	</body>
+
+</html>

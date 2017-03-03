@@ -4,7 +4,17 @@ var cantidad = aleatorio(5,50);
 var fondo = {cargaOk: false};
 var vaca = {cargaOk: false};
 var pollo = {cargaOk: false};
+var teclas = {LEFT: 37, UP: 38, RIGHT: 39, DOWN: 40};
+var x1 = aleatorio(0, 6) * 70;
+var y1 = aleatorio(0, 6) * 70;
+var px=[], py=[];
 
+for (var v=0; v<cantidad; v++) {
+  var x = aleatorio(0, 6) * 70;
+  var y = aleatorio(0, 6) * 70;
+  px.push(x);
+  py.push(y);
+}
 
 fondo.imagen = new Image();
 fondo.imagen.src = "images/tile.png";
@@ -17,6 +27,8 @@ vaca.imagen.addEventListener("load", cargarVaca);
 pollo.imagen = new Image();
 pollo.imagen.src = "images/pollo.png";
 pollo.imagen.addEventListener("load", cargarPollo);
+
+document.addEventListener("keyup", teclado);
 
 function cargarFondo(){
   fondo.cargaOk = true;
@@ -37,20 +49,12 @@ function dibujar() {
 
   if(vaca.cargaOk){
     for (var v=0; v<cantidad; v++) {
-      var x = aleatorio(0, 6);
-      var y = aleatorio(0, 6);
-      x = x * 80;
-      y = y * 80;
-      papel.drawImage(vaca.imagen, x, y);
+      papel.drawImage(vaca.imagen, px[v], py[v]);
     }
   }
 
   if(pollo.cargaOk){
-    var x = aleatorio(0, 6);
-    var y = aleatorio(0, 6);
-    x = x * 80;
-    y = y * 80;
-    papel.drawImage(pollo.imagen, x, y);
+    papel.drawImage(pollo.imagen, x1, y1);
   }
 }
 
@@ -58,4 +62,29 @@ function aleatorio(min, max){
   var resulado;
   resulado = Math.floor(Math.random()*(max - min + 1)) + min ;
   return resulado;
+}
+
+function teclado(evento){
+	var paso = 10;
+
+	switch (evento.keyCode) {
+		case teclas.UP:
+      papel.drawImage(pollo.imagen, x1, y1-paso);
+			y1 = y1 - paso;
+			break;
+		case teclas.DOWN:
+      papel.drawImage(pollo.imagen, x1, y1+paso);
+      y1 = y1 + paso;
+			break;
+		case teclas.LEFT:
+      papel.drawImage(pollo.imagen, x1-paso, y1);
+			x1 = x1 - paso;
+			break;
+		case teclas.RIGHT:
+      papel.drawImage(pollo.imagen, x1+paso, y1);
+			x1 = x1 + paso;
+			break;
+		default:
+	}
+  dibujar();
 }

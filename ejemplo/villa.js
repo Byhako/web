@@ -1,15 +1,10 @@
 var vp = document.getElementById("villa");
 var papel = vp.getContext("2d");
-var fondo = {
-  url: "images/tile.png",
-  cargaOk: false
-}
-var vaca = {
-  url: "images/vaca.png",
-  cargaOk: false
-};
-
 var cantidad = aleatorio(5,50);
+var fondo = {cargaOk: false};
+var vaca = {cargaOk: false};
+var pollo = {cargaOk: false};
+
 
 fondo.imagen = new Image();
 fondo.imagen.src = "images/tile.png";
@@ -19,6 +14,9 @@ vaca.imagen = new Image();
 vaca.imagen.src = "images/vaca.png";
 vaca.imagen.addEventListener("load", cargarVaca);
 
+pollo.imagen = new Image();
+pollo.imagen.src = "images/pollo.png";
+pollo.imagen.addEventListener("load", cargarPollo);
 
 function cargarFondo(){
   fondo.cargaOk = true;
@@ -26,6 +24,10 @@ function cargarFondo(){
 }
 function cargarVaca(){
   vaca.cargaOk = true;
+  dibujar();
+}
+function cargarPollo(){
+  pollo.cargaOk = true;
   dibujar();
 }
 
@@ -41,6 +43,14 @@ function dibujar() {
       y = y * 80;
       papel.drawImage(vaca.imagen, x, y);
     }
+  }
+
+  if(pollo.cargaOk){
+    var x = aleatorio(0, 6);
+    var y = aleatorio(0, 6);
+    x = x * 80;
+    y = y * 80;
+    papel.drawImage(pollo.imagen, x, y);
   }
 }
 

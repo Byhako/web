@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Dibujándo con canvas</title>
+		<style type="text/css">
+
+		.cont1{
+			width: 300px;
+			height: 400px;
+			margin-left: 50px;
+			margin-top: 30px;
+			float: left;
+		}
+
+		.cont2{
+			width: 300px;
+			height: 400px;
+			margin-left: 50px;
+			margin-top: 20px;
+			float: left;
+		}
+
+		.cont3{
+			width: 300px;
+			height: 400px;
+			margin-left: 50px;
+			margin-top: 30px;
+			float: left;
+		}
+
+		body{
+			width: 1100px;
+			height: 550px;
+			border: 5px solid red;
+			margin: auto;
+			margin-top: 20px;
+		}
+
+		</style>
+
+	</head>
+
+<!--===============================================================-->
+
+	<body>
+		<h1 align=center>Dibujo en canvas</h1>
+
+		<div class="cont1">
+			<h3>Dibujar con el mouse.</h3>
+			<canvas width="300" height="300" id="raton"></canvas>
+			<input type="button" value="Borrar" id="borrarm">
+		</div>
+
+		<div class="cont2">
+			<p><strong>Cuantas líneas quieres</strong>
+				<input type="text" id="texto_lineas" />
+				<input type="button" value="A darle!" id="botoncito" />
+			</p>
+			<canvas width="300" height="300" id="dibujito"></canvas>
+		</div>
+
+		<div class="cont3">
+			<h3>Dibujar con el teclado.</h3>
+			<canvas width="300" height="300" id="area"></canvas>
+			<input type="button" value="Borrar" id="borrar">
+		</div>
+
+		<script src="dibujo.js"></script>
+	</body>
+</html>

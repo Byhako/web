@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Cajero</title>
+
+	<style type="text/css">
+
+		.cont1{
+			height: 310px;
+			width: 330px;
+			margin-right: 100px;
+			margin-left: 100px;
+			margin-top: 30px;
+			margin-bottom: 0px;
+			float: left;
+			background-color: black;
+			padding: 50px;
+		}
+
+		.cont2{
+			height: 310px;
+			margin-right: 0px;
+			margin-left: 0px;
+			margin-top: 30px;
+			margin-bottom: 0px;
+			float: left;
+			padding: 50px;
+			padding-top: 0px;
+			font-size: 24px;
+			color: whitesmoke;
+
+		}
+
+		body{
+			background-color: #2E2E2E;
+		}
+
+		p{
+			margin: 30px;
+			justify-content: center;
+			flex-direction: row;
+		}
+
+		h2{
+			float: left;
+			margin-right: 50%;
+			margin-left: 100px;
+			margin-bottom: 20px;
+		}
+	</style>
+
+</head>
+<!--******************************************************************-->
+<body>
+
+	<div class="cont1">
+	<img src="images/cajero.gif" align="center">
+	<p><input type="number" id="cantidad"/>
+	<button type="button" id="solicitar">Solicitar</button>
+	</p>
+	</div>
+
+	<div class="cont2"> 
+	<p id='efectivo100'></p>
+	<p id='efectivo50'></p>
+	<p id='efectivo20'></p>
+	<p id='efectivo10'></p>
+
+	</div>
+
+	<h2 id='error' style="color:#B40431;"></h2></br>
+
+	<script src="cajero.js"></script>
+
+</body>
+</html>

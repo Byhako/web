@@ -30,6 +30,9 @@ pollo.imagen.addEventListener("load", cargarPollo);
 
 document.addEventListener("keyup", teclado);
 
+//////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////
+
 function cargarFondo(){
   fondo.cargaOk = true;
   dibujar();
@@ -42,7 +45,7 @@ function cargarPollo(){
   pollo.cargaOk = true;
   dibujar();
 }
-
+//************************************************************************
 function dibujar() {
   if(fondo.cargaOk){
     papel.drawImage(fondo.imagen, 0, 0);}
@@ -57,34 +60,31 @@ function dibujar() {
     papel.drawImage(pollo.imagen, x1, y1);
   }
 }
-
+//************************************************************************
 function aleatorio(min, max){
   var resulado;
   resulado = Math.floor(Math.random()*(max - min + 1)) + min ;
   return resulado;
 }
-
+//************************************************************************
 function teclado(evento){
 	var paso = 10;
 
 	switch (evento.keyCode) {
 		case teclas.UP:
-      papel.drawImage(pollo.imagen, x1, y1-paso);
 			y1 = y1 - paso;
 			break;
 		case teclas.DOWN:
-      papel.drawImage(pollo.imagen, x1, y1+paso);
       y1 = y1 + paso;
 			break;
 		case teclas.LEFT:
-      papel.drawImage(pollo.imagen, x1-paso, y1);
 			x1 = x1 - paso;
 			break;
 		case teclas.RIGHT:
-      papel.drawImage(pollo.imagen, x1+paso, y1);
 			x1 = x1 + paso;
 			break;
 		default:
 	}
   dibujar();
 }
+//************************************************************************

@@ -1,0 +1,24 @@
+Descargando los instaladores del sitio oficial de io.js:
+
+http://iojs.org/dist/latest
+
+Usando distribuciones para linuz de NodeSource
+
+http://github.com/nodesource/distributions
+
+Utilizando nvm (Recomendada)
+
+http://github.com/creationix/nvm
+
+Para el ejercicio clonamos:
+
+git clone http://github.com/julianduque/animate-server
+
+Los callbacks son funiones que se ejecutan despues de que algun metodo
+asincrono a terminado su ejecucion.
+
+
+
+
+npm init
+

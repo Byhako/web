@@ -1,0 +1,43 @@
+/*Coloca un elemento antes de...*/
+ul li{
+	font-size: 25px;
+	list-style: none;
+	font-weight: bold;
+}
+
+ul li::after{
+	content: url(mano.png);
+}
+
+ul li::before{
+	content: url(flecha.png);
+}
+p{
+	font-size: 30px;
+}
+
+p::first-letter{
+	font-size: 36px;
+	font-weight: bold;
+	color:red;
+}
+
+p::first-line{
+	font-style: italic;
+}
+
+.prueba{
+	height: 200px;
+	width: 200px;
+	background-color: #0a5d10;
+	transform:rotate(20deg);
+}
+
+.tamano{
+	height: 100px;
+	width: 30px;
+	overflow: hidden;
+	resize: both;
+	border: solid;
+}
+/*https://leaverou.github.io/prefixfree/*/

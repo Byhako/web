@@ -1,0 +1,31 @@
+/*selector de hijos*/
+h3 > p{
+	font-family: cursive;
+}
+/*Afecta solo a los que son hijos direcots*/
+
+/*selector adyasente*/
+h3 + p{
+	color: #3c1340;
+}
+/*modifica elementos que estan justo despues de otro elemento
+pero no anidados*/
+
+/*Selector de atributos*/
+
+/* Se muestran de color azul todos los enlaces que tengan
+   un atributo "class", independientemente de su valor */
+a[class] { color: blue; }
+
+/* Se muestran de color azul todos los enlaces que tengan
+   un atributo "class" con el valor "externo" */
+a[class="externo"] { color: blue; }
+
+/* Se muestran de color azul todos los enlaces que apunten
+   al sitio "http://www.ejemplo.com" */
+a[href="http://www.ejemplo.com"] { color: blue; }
+
+/* Se muestran de color azul todos los enlaces que tengan
+   un atributo "class" en el que al menos uno de sus valores
+   sea "externo" */
+a[class~="externo"] { color: blue; }

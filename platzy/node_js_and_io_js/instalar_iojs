@@ -18,7 +18,14 @@ Los callbacks son funiones que se ejecutan despues de que algun metodo
 asincrono a terminado su ejecucion.
 
 
-
-
 npm init
+
+Documentacion de modulo st 
+
+https://www.npmjs.com/package/st
+
+instalamos con: npm install ts --save
+
+el -- save es para que este modulo quede en nuestro archivo package.json
+
 

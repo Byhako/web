@@ -1,0 +1,56 @@
+.tpl{
+		display: none;
+}
+body{
+	background-color: #e6ebc9;
+	color: #1d1c1b;
+}
+h1.pi-draggable{
+	display: inline-block;
+	margin-left: 130px;
+}
+
+nav{
+	height: 50px;
+	background-color: rgb(46, 38, 15);
+	margin-bottom: 10px;
+}
+.borrar{
+	margin-left: 60px;
+	margin-bottom: 17px;
+}
+
+.menu{
+	width: 90px;
+}
+
+.img {
+  width: 20px;
+  float: left;
+}
+
+.img1{
+	width: 20px;
+	float: right;
+	visibility: collapse;
+}
+
+table {
+	border-spacing: 5px;
+	border-collapse: inherit;
+}
+
+.table{
+	width: 400px;
+	margin-left: 100px;
+	text-align: center;
+}
+
+td{
+	width: 100px;
+	background-color: rgb(166, 164, 163);
+}
+th{
+	width: 100px;
+}
+/*localstorage*/

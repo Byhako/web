@@ -13,11 +13,10 @@ app.use('/ui', express.static(uiDir))
 
 const api = require('./api')
 
-app.get('/api/lista', api.lista)
 app.get('/api/products', api.listProducts)
 app.post('/api/products', api.postProducts)
-app.get('/api/borrar', api.borrarProductos)
-app.post('/api/actualizar', api.actualizaProducto)
+app.put('/api/products', api.actualizaProducto)
+app.delete('/api/products', api.borrarProductos)
 
 app.listen(8080, function(){
 	console.log('Server run in port 8080');

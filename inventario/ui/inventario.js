@@ -1,27 +1,21 @@
 $(document).ready(($) => {
 
 	var productos = []
-	var contador = 0
 	var templates = {productoItem: Handlebars.compile($("#producto-item-tpl").html())}
 	var menu_t = {productoItem: Handlebars.compile($("#menu-tpl").html())}
 
-	obtenerlista(() =>{
-		var lim = productos.length
-		console.log(lim)
-		for(var i=0 ; i<lim ; i++){
-			console.log(productos.length);
-			var producto = productos[i]
-			cargarProducto(producto)
-			console.log(producto);
-		}
+	obtenerlista()
 
-	})
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////
-	function obtenerlista(cb){
-		$.get('/api/lista',(data) =>{
+	function obtenerlista(){          //carga lista con datos de base
+		$.get('/api/products',(data) =>{
 			productos = data
-			cb()
+			var lim = productos.length
+			for(var i=0 ; i<lim ; i++){
+				var producto = productos[i]
+				cargarProducto(producto)
+			}
 		})
 	}
 
@@ -29,9 +23,8 @@ $(document).ready(($) => {
 		var html = templates.productoItem(producto)
 		var menu = menu_t.productoItem(producto)
 		productos.push(producto)
-		$(".tabla-productos").append(html);
-		$(".menu").append(menu);
-		contador++
+		$(".tabla-productos").append(html) //carga producto en lista
+		$(".menu").append(menu)            //carga producto en menu
 	}
 
 	function agregarProducto() {
@@ -39,16 +32,12 @@ $(document).ready(($) => {
 			nombre: $("input.nombre-producto").val(),
 			id: parseInt(Math.random()*1e5),
 			cantidad: 0}
-
 		var html = templates.productoItem(producto)
 		var menu = menu_t.productoItem(producto)
-
 		productos.push(producto)
-		$.post('/api/products', producto)
-
-		$(".tabla-productos").append(html);
-		$(".menu").append(menu);
-		contador++
+		$.post('/api/products', producto)  //envio data
+		$(".tabla-productos").append(html) //actualizo lista
+		$(".menu").append(menu)            //actualizo menu
 	}
 
 	function actualizar(){
@@ -56,19 +45,20 @@ $(document).ready(($) => {
 		var lab = 'td.' + nombre
 		var num = $('.numero').val()
 		var html = '<td class=' + '"' + nombre+ '"' + '>' + num + '</td>'
-		var name = {nombre:nombre, numero:num, contador:contador}
+		var name = {nombre:nombre, numero:num}
 		$( lab ).replaceWith( html )
-		$.post('/api/actualizar', name)
+		$.ajax({url: '/api/products', type: 'PUT', data: name})
+
 	}
 
 	function borrar(){
 		$( "body.bodyt" ).replaceWith( '<tbody class="inner bodyt"> </tbody>' )
 		$( "tr.inner" ).replaceWith( $( ".first" ) )
 		$( "option.inner" ).replaceWith( $( ".first" ) )
-		$.get('/api/borrar')
+		$.ajax({url: '/api/products', type: 'DELETE'})
 		productos = []
-		contador = 0
 	}
+
 
 ////////////////////////////////////////////////////////////////////////////
 ////////////////////////////////////////////////////////////////////////////

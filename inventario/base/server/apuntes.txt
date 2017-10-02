@@ -1,0 +1,35 @@
+---------------------------------------------
+HTTP verbs
+
+GET, POST PUT DELETE
+
+GET: Obtener un recurso
+
+POST: Enviar datos al servidor 
+
+  header -->  content-Type (metadatos)
+
+PUT: Actualizar data en el servidor
+
+DELETE: Borrar datos en el servidor
+
+------------------------------------------------
+REST "representational state transfer"
+
+como definir mis 'endpoints' no una accion, no verbos, si sustantivos, si estados.
+
+tesis te fielding
+------------------------------------------------
+Para correr nuestro servidor. Intento 1:
+
+curl -XPOST -H 'content-Type: text/plain' -d 'ruben' localhost:8080
+
+URL  distito a URI
+
+URL o un endpoint.
+
+Lenguajes que compilan a JavaScript:
+
+coffescript, typescript, ecmascript, 
+
+interfaces, clases, funciones, enumps, iteradors y genersadores, modulos, namespaces, decoradores, mixinis.

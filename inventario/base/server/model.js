@@ -1,31 +1,35 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
-const productSchema = new Schema({
-	name: String,
-	descripcion: String,
-	price: Number,
-	qty: Number,
-	createAt: Date,
-	updateAt: Date
-})
-const Produc = mongoose.model('Product', productSchema)
 
-mongoose.connect('mongodb://localhost/inventario', {useMongoClient:true, promiseLibrary:global.Promise})
+const productSchema = new Schema({
+	nombre: String,
+	cantidad: Number
+})
+
+const producto = mongoose.model('producto', productSchema)
+
+mongoose.connect('mongodb://localhost/inventario',{useMongoClient:true,promiseLibrary:global.Promise})
 
 module.exports = {
 
-	listProducts: (cb) =>{
-		Product.find(cb)
+	getProductos: (cb) =>{
+		producto.find(cb)
 	},
 
-	getproducts: () =>{
-
+	postProductos: (data, cb) =>{
+		let articulo = new producto(data)
+		articulo.save(cb)
 	},
 
-	postProducts: (data, cb) =>{
-		let product = new Product(data)
-		product.save(cb)
+	putProductos: (data) =>{
+		let numeros = parseInt(data.numero)
+		let nombre = { nombre: data.nombre }
+		producto.findOneAndUpdate(nombre,{$set:{cantidad:numeros}},
+			{returnNewDocument:true},function(err){
+		})
 	},
 
-
+	deleteProductos: () =>{
+		producto.remove({},function(err){})
+	}
 }

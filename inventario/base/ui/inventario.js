@@ -7,7 +7,15 @@ $(document).ready(($) => {
 	obtenerlista()
 
 ////////////////////////////////////////////////////////////////////////////
+
+	$(".agregar-producto").click((e) => { agregarProducto() })
+
+	$(".borrar").click((e) => { borrar() })
+
+	$(".actualizar").click((e) => { actualizar() })
+
 ////////////////////////////////////////////////////////////////////////////
+
 	function obtenerlista(){          //carga lista con datos de base
 		$.get('/api/products',(data) =>{
 			productos = data
@@ -30,14 +38,12 @@ $(document).ready(($) => {
 	function agregarProducto() {
 		var producto = {
 			nombre: $("input.nombre-producto").val(),
-			id: parseInt(Math.random()*1e5),
 			cantidad: 0}
-		var html = templates.productoItem(producto)
-		var menu = menu_t.productoItem(producto)
-		productos.push(producto)
 		$.post('/api/products', producto)  //envio data
-		$(".tabla-productos").append(html) //actualizo lista
-		$(".menu").append(menu)            //actualizo menu
+		$("body.bodyt").replaceWith('<tbody class="inner bodyt"> </tbody>')
+		$("tr.inner").replaceWith( $(".first") )
+		$("option.inner").replaceWith( $(".first") )
+		obtenerlista()
 	}
 
 	function actualizar(){
@@ -52,22 +58,10 @@ $(document).ready(($) => {
 	}
 
 	function borrar(){
-		$( "body.bodyt" ).replaceWith( '<tbody class="inner bodyt"> </tbody>' )
-		$( "tr.inner" ).replaceWith( $( ".first" ) )
-		$( "option.inner" ).replaceWith( $( ".first" ) )
+		$("body.bodyt").replaceWith('<tbody class="inner bodyt"> </tbody>')
+		$("tr.inner").replaceWith( $(".first") )
+		$("option.inner").replaceWith( $(".first") )
 		$.ajax({url: '/api/products', type: 'DELETE'})
 		productos = []
 	}
-
-
-////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////
-	$(".agregar-producto").click((e) => { agregarProducto() })
-
-	$(".borrar").click((e) => { borrar() })
-
-	$(".actualizar").click((e) => { actualizar() })
-
 })
-
-// xhr require javascript

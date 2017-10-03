@@ -1,26 +1,33 @@
 const model = require('./model')
 
 module.exports = {
-
-	listProducts: (req, res) => {
-		model.listProducts((err, products)=>{
+//---------------------------------------------------------------
+	getProducto: (req, res) => {
+		model.getProductos((err, products)=>{
 			res.send(products)
 		})
 		console.log('Lista cargada');
 	},
-
-	postProducts: (req, res) => {
+	//---------------------------------------------------------------
+	postProducto: (req, res) => {
 		const product = req.body
-		model.postProducts(product, (err,p)=>{
+		model.postProductos(product, (err,p)=>{
 			res.send(p)
 		})
 		console.log('Producto agregado')
 	},
-
-
-	actualizaProducto: (req, res) => {
-
+	//---------------------------------------------------------------
+	putProducto: (req, res) => {
+		const registro = req.body
+		model.putProductos(registro, (err,p)=>{
+			res.send(p)
+		})
 		console.log('Lista actualizada')
+	},
+	//---------------------------------------------------------------
+	deleteProducto:(req, res) => {
+		model.deleteProductos()
+		console.log('Lista borrada')
 	}
-
+	//---------------------------------------------------------------
 }

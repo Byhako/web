@@ -22,7 +22,7 @@ function safeReadDirSync (path) {
 
 function directoryTree (path, options, onEachFile) {
 	const name = PATH.basename(path);
-	const item = { path, text: name };
+	const item = { text: name };
 	let stats;
 
 	try { stats = FS.statSync(path); }
@@ -56,7 +56,7 @@ function directoryTree (path, options, onEachFile) {
 		item.children = dirData
 			.map(child => directoryTree(PATH.join(path, child), options, onEachFile))
 			.filter(e => !!e);
-		item.state = {opened: true}
+		//item.state = {opened: true}
 		item.size = item.children.reduce((prev, cur) => prev + cur.size, 0);
 		item.type = constants.DIRECTORY;
 	} else {

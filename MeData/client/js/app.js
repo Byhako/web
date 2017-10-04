@@ -1,5 +1,6 @@
 $(document).ready(function() {
-  var files
+	var files
+	var treeState
 
   $('#jstree').jstree({
     'core': {
@@ -29,24 +30,52 @@ $(document).ready(function() {
     }
   })
 
+
+
 	getFiles(()=>{})
+	loadTree()
+	restoreState()
 
 	function getFiles(cb){
+		$.jstree.destroy()
 		$.get('api/Files',(data) =>{
 			files = data
 			cb()
 		})
 	}
 
-	$('#jstree_arbol').jstree({
-		'core': {
-			'data': {
-				'url' : '/api/files',
-				'data': function (node) {
-					return {'id': node.id}
+	function loadTree (){
+		$('#jstree_arbol').jstree({
+			'core': {
+				'data': {
+					'url' : '/api/files',
+					'data': function (node) {
+						return {'id': node.id, 'state': node.state}
+					}
 				}
 			}
-		}
-	})
-	console.log("Application ready")
+		})
+
+		$('#jstree_arbol').on('ready.jstree', treeReady)
+	}
+
+	function treeReady() {
+		const $el = $('#jstree_arbol')
+
+		$el.jstree().open_all()
+		$el.on('after_open.jstree', function(e, node){
+			treeState = $el.jstree().get_state()
+		})
+	}
+
+
+	function restoreState(){
+		const s = $('#jstree_arbol').jstree().get_state()
+		s.core.open = treeState
+		$el.jstree().set_state(s)
+		$el.jstree().redraw(s)
+	}
+
+
+
 })

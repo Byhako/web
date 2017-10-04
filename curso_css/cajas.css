@@ -1,0 +1,271 @@
+*{
+	text-align: center;
+}
+/*La propiedad clear permite modificar el comportamiento por defecto del
+posicionamiento flotante para forzar a un elemento a mostrarse debajo de
+cualquier caja flotante*/
+br{
+	clear: both;
+}
+h2{
+	color:#f08038;
+	background-color: #322602;
+	border-radius:10px;
+	padding-top: 20px;
+	width: 40%;
+	height: 50px;
+	margin-left: 30%;
+}
+.fondo1{
+	border: 5px solid black;
+	background-color: #d02d91;
+	margin: 10px;
+	height: 50px;
+}
+.fondo2{
+	border: 5px solid yellow;
+	background-image: url('fondo.jpg');
+	color: white;
+	margin: 10px;
+	height: 50px;
+}
+/*El valor repeat indica que la imagen se debe repetir en todas direcciones y
+por tanto, es el comportamiento por defecto. El valor no-repeat muestra una
+sola vez la imagen y no se repite en ninguna dirección. El valor repeat-x
+repite la imagen sólo horizontalmente y el valor repeat-y repite la imagen
+solamente de forma vertical.*/
+.fondo3{
+	border: 5px solid black;
+	background: url('logo.png') repeat-x;
+	margin: 10px;
+	height: 50px;
+}
+#cont1 div{
+	height: 50px;
+	margin: 1.5%;
+	width: 45%;
+	float: left;
+}
+
+/*POSICIONAMIENTO DE IMAGENES Y CAJAS*/
+#caja1 {
+	background-image: url("help.png");
+	background-repeat: no-repeat;
+	background-position: bottom left;
+	border: 5px solid black;
+	height: 200px;
+	margin-right: 2.5%;
+	float: left;
+	width: 29%;
+}
+#caja2 {
+	background-image: url("help.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+	border: 5px solid black;
+	height: 200px;
+	margin-right: 2.5%;
+	margin-left: 2.5%;
+	float: left;
+	width: 29%;
+}
+#caja3 {
+  background-image: url("help.png");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+	border: 5px solid black;
+	height: 200px;
+	margin-left: 2.5%;
+	float: left;
+	width: 29%;
+}
+#cont2{
+	width: 90%;
+	float: left;
+	margin: 10px;
+	margin-left: 5%;
+	overflow: hidden;
+}
+
+/*Un elemento posicionado de forma flotante ya no pertenece al flujo normal de
+la página HTML. Por tanto, el elemento <div id="paginacion"> en realidad no
+encierra ningún contenido y por eso se visualiza incorrectamente.
+La solución consiste en utilizar la propiedad overflow sobre el elemento
+contenedor.*/
+
+#paginacion {
+  border: 1px solid #CCC;
+  background-color: #E0E0E0;
+	padding-top: 0.5em;
+  padding-bottom: 0.5em;
+	width: 90%;
+	margin-left: 5%;
+  overflow: hidden;
+}
+ .derecha   { float: right; }
+.izquierda { float: left;  }
+
+.cont3{
+	border: 1px solid black;
+	width: 190px;
+	height: 230px;
+	margin-left: 13%;
+	margin-top: 19px;
+	float: left;
+}
+.cont3 div{
+	border: 1px solid black;
+	height: 35px;
+	width: 50px;
+	display: inline-block;
+	margin-top: 5px;
+	padding-top: 15px;
+}
+.cont3 + p{
+	margin-bottom: :15px;
+}
+#cont4{
+	border: 5px double black;
+	width: 50%;
+	height: 270px;
+	overflow: hidden;
+	margin-left: 25%;
+}
+#c1{display: none;}
+#c2{visibility: hidden;}
+
+/*OVERFLOW*/
+#sobre{
+	border: 5px groove black;
+	width: 36%;
+	margin-left: 32%;
+	height: 350px;
+
+}
+.overflow {
+  display: inline;
+  float: left;
+  margin: 20px;
+	margin-left: 5%;
+  padding: .3em;
+  border: 2px solid #555;
+  width: 100px;
+  height: 150px;
+  font: 1em Arial, Helvetica, sans-serif;
+}
+
+/*controlar la posición tridimensional para crear capas. De esta forma,
+es posible indicar las cajas que se muestran delante o detrás de otras cajas
+cuando se producen solapamientos. Cuanto más alto sea el valor numérico, más
+cerca del usuario se muestra la caja.*/
+#cont5{
+	border: 5px solid black;
+	width: 45%;
+	margin-left: 25%;
+	padding-left: 5%;
+	height: 330px;
+
+}
+#cont5 div {
+	position: relative;
+	border: 1px solid black;
+	width: 200px;
+	height: 200px;
+	margin:10px;
+}
+#cajita1 {
+	z-index: 5;
+	top: 0px;
+	left: 136px;
+	background-color: red;
+}
+#cajita2 {
+  z-index: 15;
+  top: -110px;
+  left: 88px;
+	background-color: blue;
+}
+
+#cajita3 {
+  z-index: 25;
+  top: -405px;
+  left: 0px;
+	background-color: yellow;
+}
+
+/*--------------------------------------------------*/
+#n{
+	border: 5px solid black;
+	height: 195px;
+	width: 90%;
+	margin-left: 5%;
+}
+.fila{
+	width: 90%;
+	margin-left: 5%;
+	height: 65px;
+}
+.n1{
+	border: 1px solid black;
+	width: 40%;
+	margin-left: 6%;
+	margin-top: 10px;
+	height: 50px;
+	display: inline-block;
+}
+.n2{
+	border: 1px solid black;
+	width: 30%;
+	margin-left: 2%;
+	margin-top: 5px;
+	height: 50px;
+	display: inline-block;
+}
+.n3{
+	border: 1px solid black;
+	width: 90%;
+	margin-left: 5%;
+	margin-top: 5px;
+	height: 50px;
+	display: inline-block;
+}
+
+#cuadritos{
+	border: 2px solid black;
+	width: 406px;
+	height: 406px;
+	overflow: hidden;
+	margin-left: 35%;
+}
+
+#cuadritos div{
+	border: 1px dashed black;
+	margin: 0px;
+	float: left;
+}
+
+.uno{
+	width: 100px;
+	height: 100px;
+	background-color: #d1cf20;
+}
+
+.dos{
+	width: 200px;
+	height: 100px;
+	background-color: black;
+}
+
+.tres{
+	width: 100px;
+	height: 200px;
+	background-color: black;
+
+}
+
+.cuatro{
+	width: 200px;
+	height: 200px;
+	background-color: #d1cf20;
+
+}

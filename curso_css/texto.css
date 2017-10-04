@@ -1,0 +1,63 @@
+p, pre{
+	width: 90%;
+	margin-left: 5%;
+}
+
+#goo{
+	font-family: 'Indie Flower', cursive;
+	color: blue;
+	font-size: 24px;
+}
+
+#p1{
+	font-size: 20px;
+	font-weight: bold;
+	font-family: fantasy;
+	font-style: oblique;
+	text-align: justify;
+	text-indent: 4ex;
+}
+
+#p2{
+	font-variant: small-caps;
+	color: rgb(3, 50, 17);
+	text-align: center;
+}
+
+#p3{
+	line-height: 200%;
+	font-family: monospace;
+	font-size: 20px;
+	text-decoration: underline;
+}
+/*La propiedad text-transform permite mostrar el texto original transformado
+en un texto completamente en mayúsculas (uppercase), en minúsculas (lowercase)
+o con la primera letra de cada palabra en mayúscula (capitalize).*/
+
+#p4{
+	text-transform: capitalize;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+div{
+	width: 90%;
+	margin-left: 5%;
+	height: 70px;
+	border: 2px dashed rgb(181, 107, 39);
+	text-align: center;
+	font-weight: bolder;
+	padding-top: 20px;
+}
+
+div img{vertical-align: middle;}
+
+/*CSS también permite controlar la separación entre las letras que forman las
+palabras y la separación entre las palabras que forman los textos. La propiedad
+que controla la separación entre letras se llama letter-spacing y la separación
+entre palabras se controla mediante word-spacing.*/
+
+#valores{
+	margin-left: 20%;
+}
+span{color:red; font-weight: bold;}

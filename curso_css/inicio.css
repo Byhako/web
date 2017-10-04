@@ -1,0 +1,71 @@
+body{
+	background: #d5ddda;
+	color: #2e0509;
+}
+
+h1{
+	color: #540808;
+	text-decoration: underline;
+}
+
+.art{  /*selector desde clase*/
+	color: rgb(43, 23, 111);
+}
+
+footer p{ /*Etiqueta anidada*/
+	color: rgb(196, 74, 215);
+}
+
+#dos{  /*selector desde id*/
+	font-style: italic;
+}
+
+/*Pseudo-clases*/
+
+/* unvisited link */
+a:link {
+	 color: #FF0000;
+}
+
+/* visited link */
+a:visited {
+	 color: #00FF00;
+}
+
+/* mouse over link */
+a:hover {
+	 color: #FF00FF;
+}
+
+/* selected link */
+a:active {
+	 color: #0000FF;
+}
+
+div{
+	height: 80px;
+	margin-bottom: 10px;
+}
+
+div p {
+    display: none;
+    background-color: yellow;
+    padding: 20px;
+}
+
+div:hover p {
+    display: block;
+}
+
+input:focus{
+	background-color: rgb(141, 175, 109);
+}
+
+input:hover{
+	background-color: rgb(213, 232, 196);
+}
+
+/*hijos*/
+article p:nth-child(2){
+	font-size: 20px;
+}

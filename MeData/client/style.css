@@ -2,11 +2,13 @@ body {
     background-color: #e2eaeb;
 }
 
-.jstree-open > .jstree-anchor > .fa-folder:before {
-    content: "\f07c";
+nav {
+	background-color: #1e478c;
+	height: 50px;
 }
 
-.jstree-default .jstree-icon.none {
-    width: 0;
+.row{
+	margin-top: 50px;
+	margin-left: 50px;
+	margin-right: 50px;
 }
-

@@ -29,8 +29,9 @@ function directoryTree (path, options, onEachFile) {
 	catch (e) { return null; }
 
 	// Skip if it matches the exclude regex
-	if (options && options.exclude && options.exclude.test(path))
+	if (options && options.exclude && options.exclude.test(path)){
 		return null;
+	}
 
 	if (stats.isFile()) {
 
@@ -47,6 +48,7 @@ function directoryTree (path, options, onEachFile) {
 			onEachFile(item, PATH);
 		}
 	}
+
 	else if (stats.isDirectory()) {
 		let dirData = safeReadDirSync(path);
 		if (dirData === null) return null;
@@ -54,6 +56,7 @@ function directoryTree (path, options, onEachFile) {
 		item.children = dirData
 			.map(child => directoryTree(PATH.join(path, child), options, onEachFile))
 			.filter(e => !!e);
+		item.state = {opened: true}
 		item.size = item.children.reduce((prev, cur) => prev + cur.size, 0);
 		item.type = constants.DIRECTORY;
 	} else {

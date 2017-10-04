@@ -34,6 +34,7 @@ $(document).ready(function() {
 	function getFiles(cb){
 		$.get('api/Files',(data) =>{
 			files = data
+			cb()
 		})
 	}
 
@@ -47,5 +48,6 @@ $(document).ready(function() {
 			}
 		}
 	})
+
 	console.log("Application ready")
 })

@@ -7,8 +7,13 @@ nav {
 	height: 50px;
 }
 
-.row{
-	margin-top: 50px;
-	margin-left: 50px;
-	margin-right: 50px;
+
+
+.wrapper{
+	padding-top: 0px;
+}
+
+select.form-control{
+	margin-right: 5px;
+	margin-left: 5px;
 }

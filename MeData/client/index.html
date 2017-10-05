@@ -8,39 +8,84 @@
 	<title>MeData</title>
 
 	<link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+
+	<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
 	<link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
+	<link href="css/animate.css" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" type="text/css">
+
 </head>
 
 <body>
-	<nav>	</nav>
+	<nav> </nav>
 
-	<div class="row">
+<div class="py-5">
+	<div class="container">
+		<div class="row">
+<!-- AQUI REALIZAMOS EL ARBOL DE DIRECTORIOS-->
+			<div class="col-md-4">
+				<div class="ibox-title">
+					<h5>Directory Tree</h5>
+				</div>
 
-		<div class="col-md-4">
+				<div class="ibox-content">
+					<div id="jstree_arbol"></div>
+				</div>
 
-			<div class="ibox-title">
-				<h5>Directory Tree</h5>
 			</div>
 
-			<div class="ibox-content">
-				<div id="jstree_arbol" >
+<!-- AQUI COMIENZA LA TABLA-->
+
+			<div class="col-md-8">
+			<div class="wrapper wrapper-content animated fadeInRight">
+				<div class="ibox-title">
+					<h5>Basic Data Table</h5>
+				</div>
+
+				<div class="ibox-content">
+					<div class="table-responsive">
+						<table class="table dataTables-example">
+
+						<thead>
+							<tr class="cabeza"></tr>
+						</thead>
+
+						<tbody class="bodyTable"></tbody>
+
+						<tfoot>
+							<tr class="pies"></tr>
+						</tfoot>
+
+						</table>
+					</div>
 				</div>
 			</div>
-
+			</div>
 		</div>
-
-		<div class="col-md-8">
-		</div>
-
 	</div>
+</div>
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jstree/3.2.1/jstree.min.js"></script>
+	<script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+	<script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+	<script src="js/plugins/dataTables/datatables.min.js"></script>
+	<script src="js/inspinia.js"></script>
+	<script src="js/plugins/pace/pace.min.js"></script>
 	<script src="js/app.js" type="text/javascript"></script>
+
+	<script>
+		$(document).ready(function() {
+			$('.dataTables-example').DataTable({
+				pageLength: 25,
+				responsive: true,
+				buttons: []
+			});
+		});
+	</script>
 
 </body>
 

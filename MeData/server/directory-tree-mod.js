@@ -56,7 +56,6 @@ function directoryTree (path, options, onEachFile) {
 		item.children = dirData
 			.map(child => directoryTree(PATH.join(path, child), options, onEachFile))
 			.filter(e => !!e);
-		item.state = {opened: true}
 		item.size = item.children.reduce((prev, cur) => prev + cur.size, 0);
 		item.type = constants.DIRECTORY;
 	} else {

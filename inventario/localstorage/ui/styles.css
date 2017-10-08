@@ -1,0 +1,28 @@
+.tpl{
+		display: none;
+}
+h1.pi-draggable{
+	display: inline-block;
+}
+
+.borrar{
+	margin-left: 60px;
+	margin-bottom: 17px;
+}
+
+.menu{
+	width: 90px;
+}
+
+.img {
+  width: 25px;
+  float: right;
+}
+
+.img1{
+	width: 25px;
+	float: right;
+	visibility: collapse;
+}
+
+/*localstorage*/

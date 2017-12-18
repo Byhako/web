@@ -1,0 +1,43 @@
+*{
+  text-align: center;
+}
+
+body{
+  background-color: whitesmoke;
+}
+.contenedor{
+  border: 2px double black;
+  height: 330px;
+  width: 270px;
+  margin-left: 40%;
+  background-color: grey;
+}
+
+#display{
+  width: 210px;
+  height: 30px;
+  border: 1px solid black;
+  margin:30px;
+  background-color: white;
+}
+
+.fila{
+  height: 30px;
+  width: 270px;
+}
+
+button{
+  height: 30px;
+  width: 30px;
+  padding-top: 5px;
+  border: 1px solid black;
+  margin-left:30px;
+  margin-bottom:30px;
+  background-color: greenyellow;
+  font-weight: bold;
+  float: left;
+}
+
+button:hover{
+  background-color: cornflowerblue;
+}

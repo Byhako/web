@@ -1,12 +1,12 @@
 var http = require('http')
 var url  = require('url')
 
-function iniciar(route){
+function iniciar(route, handle){
 	function onRequest(request, response){
 		var pathname = url.parse(request.url).pathname
 		console.log('Petition for ' + pathname + ' received.')
 
-		route(pathname)
+		route(handle, pathname)
 
 		response.writeHead(200, {'content-Type':'text/html'})
 		response.write('Hello Ruben')

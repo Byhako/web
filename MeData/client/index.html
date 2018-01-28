@@ -7,64 +7,83 @@
 
 	<title>MeData</title>
 
-	<link rel="stylesheet" href="https://pingendo.com/assets/bootstrap/bootstrap-4.0.0-beta.1.css" type="text/css">
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="font-awesome/css/font-awesome.css" rel="stylesheet">
 
 	<link href="css/plugins/dataTables/datatables.min.css" rel="stylesheet">
+
 	<link href="css/plugins/jsTree/style.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	<link href="css/animate.css" rel="stylesheet">
 	<link rel="stylesheet" href="style.css" type="text/css">
-
 </head>
 
 <body>
 	<nav> </nav>
 
-<div class="py-5">
-	<div class="container">
-		<div class="row">
-<!-- AQUI REALIZAMOS EL ARBOL DE DIRECTORIOS-->
-			<div class="col-md-4">
-				<div class="ibox-title">
-					<h5>Directory Tree</h5>
+	<div class="py-5">
+		<div class="container">
+			<div class="row">
+				<!-- AQUI REALIZAMOS EL ARBOL DE DIRECTORIOS-->
+				<div class="col-md-4">
+					<div class="ibox-title">
+						<h5>Directory Tree</h5>
+					</div>
+
+					<div class="ibox-content">
+						<div id="jstree_arbol"></div>
+					</div>
+
 				</div>
 
-				<div class="ibox-content">
-					<div id="jstree_arbol"></div>
-				</div>
+<!--************* AQUI COMIENZA LA TABLA **************************-->
 
-			</div>
+				<div class="col-md-8">
 
-<!-- AQUI COMIENZA LA TABLA-->
+					<div class="ibox float-e-margins">
+						<div class="ibox-title">
+							<h5>Basic Data Table</h5>
 
-			<div class="col-md-8">
-			<div class="wrapper wrapper-content animated fadeInRight">
-				<div class="ibox-title">
-					<h5>Basic Data Table</h5>
-				</div>
+						</div>
 
-				<div class="ibox-content">
-					<div class="table-responsive">
-						<table class="table dataTables-example">
+						<div class="ibox-content">
+							<div class="table-responsive">
+								<table class="table dataTable dataTables-example">
 
-						<thead>
-							<tr class="cabeza"></tr>
-						</thead>
+									<thead>
+										<tr>
+											<th>ITEM</th>
+											<th>FECHA</th>
+											<th>HORA</th>
+											<th>CARRO</th>
+											<th>MOTO</th>
+											<th>OTROS</th>
+											<th>PESADO</th>
+										</tr>
+									</thead>
 
-						<tbody class="bodyTable"></tbody>
+									<tfoot>
+										<tr>
+											<th>ITEM</th>
+											<th>FECHA</th>
+											<th>HORA</th>
+											<th>CARRO</th>
+											<th>MOTO</th>
+											<th>OTROS</th>
+											<th>PESADO</th>
+										</tr>
+									</tfoot>
 
-						<tfoot>
-							<tr class="pies"></tr>
-						</tfoot>
-
-						</table>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-			</div>
 		</div>
 	</div>
-</div>
+
+
 
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
@@ -76,16 +95,6 @@
 	<script src="js/inspinia.js"></script>
 	<script src="js/plugins/pace/pace.min.js"></script>
 	<script src="js/app.js" type="text/javascript"></script>
-
-	<script>
-		$(document).ready(function() {
-			$('.dataTables-example').DataTable({
-				pageLength: 25,
-				responsive: true,
-				buttons: []
-			});
-		});
-	</script>
 
 </body>
 

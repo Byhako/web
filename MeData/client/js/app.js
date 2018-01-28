@@ -1,37 +1,14 @@
 $(document).ready(function() {
   var files
+	$('.dataTables-example').DataTable({
+		pageLength: 10,
+		//responsive: true,
+		//buttons: [],
+		processing: true,
+		serverSide: true,
+		ajax: 'api/datos'
+	});
 
-	getData()
-
-	function getData(){
-		$.get('api/datos',(data) =>{
-			createTable(data)
-		})
-		console.log('Entre');
-	}
-
-	function createTable(table){
-		var colums = table[0].length
-		var rows = table.length - 1
-	// ENCABEZADOS
-		for(let i=0 ; i<colums ; i++){
-			let html = '<th>' + table[0][i] + '</th>'
-			$('.cabeza').append(html)
-			$('.pies').append(html)
-		}
-	// CUERPO DE TABLA
-		for(let i=1 ; i<rows ; i++){
-			var html = '<tr>'
-
-			for(let j=0 ; j<colums ; j++){
-				var htmlCol = '<td>' + table[i][j] + '</td>'
-				html = html + htmlCol
-			}
-
-			html = html + '</tr>'
-			$('.bodyTable').append(html)
-		}
-	}
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -104,6 +81,8 @@ $(document).ready(function() {
 		$el.jstree().set_state(s);
 		$el.jstree().redraw();
 	}
+
+
 
 	console.log("Application ready")
 })

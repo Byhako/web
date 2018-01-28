@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
+  <title>Evento click</title>
+</head>
+<body>
+  <section id="user"></section>
+
+  <script src="http://fb.me/react-0.13.3.js"></script>
+  <script src="http://fb.me/JSXTransformer-0.13.3.js"></script>
+  <script type="text/jsx">
+    var User = React.createClass({
+      getInitialState : function(){
+        return {
+          username : "Tomas Ritcher",
+          avatar : "foto.png",
+          description : "Usuario de React"
+        }
+      },
+      changeUser : function(){
+        this.setState({
+          username : "Cloe Vega",
+          avatar : "foto2.png",
+          description : "Usuaria de Mongo"
+        })
+      },
+      render : function(){
+        var image = "./images/"+this.state.avatar;
+        return(
+          <article className="User" onClick={this.changeUser}>
+            <img src={image} className="User-avatar"/>
+            <div className="User-description">
+              <p className="User-name">{this.state.username}</p>
+              <p>{this.state.description}</p>
+            </div>
+          </article>
+        )
+      }
+    })
+
+    React.render( <User/>, document.getElementById('user'))
+  </script>
+</body>
+</html>

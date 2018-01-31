@@ -1,0 +1,11 @@
+.Container{
+  background-color: white;
+  margin:20px;
+  display: inline-block;
+  width: 60%;
+  height: 300px;
+}
+
+p{
+  text-align: center;
+}

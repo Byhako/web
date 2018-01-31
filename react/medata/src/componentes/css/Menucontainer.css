@@ -1,0 +1,12 @@
+.Menu{
+  background-color: white;
+  margin:15px;
+  display: inline-block;
+  width: 30%;
+  height: 300px;
+  
+}
+
+p{
+  text-align: center;
+}

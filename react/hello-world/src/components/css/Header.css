@@ -27,3 +27,12 @@
   display: inline-block;
   padding-right: 10px;
 }
+
+.menu li a{
+	color: #CCC;
+	text-decoration: none;
+}
+
+.menu li a:hover{
+	color: blue;
+}

@@ -1,18 +1,14 @@
 export default[
 	{
 		title: 'Home',
-		url: '/'
-	},
-	{
-		title: 'Blog',
-		url: '/blog'
+		url: "/"
 	},
 	{
 		title: 'About',
-		url: '/about'
+		url: "/about"
 	},
 	{
 		title: 'Contact',
-		url: '/contact'
+		url: "/contact"
 	}
 ];

@@ -2,3 +2,12 @@
 	margin: 0 auto;
 	width: 90%;
 }
+
+input{
+  margin:15px;
+  width: 80px;
+}
+
+#resultado{
+  margin-right: 15px;
+}

@@ -12,9 +12,6 @@ import './index.css';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
 render(
-  <Router>
-    <AppRoutes/>
-  </Router>,
   document.getElementById('root')
 );
 

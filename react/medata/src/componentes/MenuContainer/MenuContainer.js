@@ -1,7 +1,10 @@
 // Dependecies
 import React, { Component } from 'react';
-import { Button } from 'reactstrap';
+
 //import propTypes from "prop-types";
+
+// Componets
+import Tree from './Tree';
 
 // Assets
 import './../css/Menucontainer.css';
@@ -12,7 +15,7 @@ class MenuContainer extends Component {
     return (
       <div className="Menu">
         <p>Directory Tree</p>
-        <Button color="secondary">secondary</Button>{' '}
+        <Tree/>
       </div>
     );
   }

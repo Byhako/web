@@ -3,18 +3,13 @@ import React from 'react';
 //import ReactDOM from 'react-dom';
 import { render } from 'react-dom';
 import 'bootstrap/dist/css/bootstrap.css';
-import { BrowserRouter as Router } from 'react-router-dom';
 
-// Routes
-import AppRoutes from './routes';
+import App from './componentes/App';
+
 
 // Assets
 import './index.css';
 
 //ReactDOM.render(<App />, document.getElementById('root'));
-render(
-  <Router>
-    <AppRoutes/>
-  </Router>,
-  document.getElementById('root')
+render(<App/>, document.getElementById('root')
 );

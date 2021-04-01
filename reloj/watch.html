@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Watch</title>
+  <style>
+    body {
+      margin: 0;
+    }
+    .container {
+      align-items: center;
+      background: rgb(11,7,73);
+      background: linear-gradient(90deg, rgba(11,7,73,1) 0%, rgba(20,133,77,1) 50%, rgba(5,43,26,1) 100%);
+      display: flex;
+      justify-content: center;
+      height: 100%;
+      min-height: 100vh;
+      width: 100%;
+    }
+    .box {
+      background-color: #fdfdfd21;
+      border: 4px solid;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      width: 25%;
+      min-width: 185px;
+    }
+    .box p {
+      color: #222;
+      font-size: 50px;
+      margin: 0;
+    }
+    .box span {
+      color: #222;
+      font-size: 50px;
+      margin: 0 10px;
+    }
+    @media screen and (max-width:660px) {
+      .box p,
+      .box span {
+        font-size: 30px;
+      }
+      .box {
+        border: 2px solid;
+        padding: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="box">
+      <p id="hour"></p>
+      <span class="points">:</span>
+      <p id="minutes"></p>
+      <span class="points">:</span>
+      <p id="secconds"></p>
+    </div>
+  </div>
+
+  <script>
+    const contentHour = document.getElementById('hour');
+    const contentMinutes = document.getElementById('minutes');
+    const contentSecconds = document.getElementById('secconds');
+
+    setInterval(() => {
+      const timeFull = new Date().toTimeString().split(' ')[0].split(':');
+      const hour = Number(timeFull[0]) === 0 ? 0 : 23 - Number(timeFull[0]);
+      const minutes = Number(timeFull[1]) === 0 ? 0 : 60 - Number(timeFull[1]);
+      const secconds = Number(timeFull[2]) === 0 ? 0 : 60 - Number(timeFull[2]);
+
+      contentHour.innerHTML = hour < 10 ? `0${hour}` : hour;
+      contentMinutes.innerHTML = minutes < 10 ? `0${minutes}` : minutes;
+      contentSecconds.innerHTML = secconds < 10 ? `0${secconds}` : secconds;
+    }, 1000);
+  </script>
+</body>
+</html>

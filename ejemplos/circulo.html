@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      display: flex;
+      justify-content: center;
+      padding-top: 30px;
+      width: 100%;
+    }
+    /* circulo contenedor de todo */
+    .circle {
+      border-radius: 50%;
+      box-shadow: 0 0 7px 0 rgb(0 0 0 / 20%);
+      height: 420px;
+      overflow: hidden;
+      position: relative;
+      width: 420px;
+    }
+    /* circulo pequeño central */
+    .circle::before {
+      align-items: center;
+      background: radial-gradient(circle,#ffc100 0,#fa0 100%);
+      border-radius: 50%;
+      box-shadow: inset 0 0 8px rgb(151 107 17 / 50%);
+      color: #455a7e;
+      content: "¿QUÉ NECESITAS?";
+      display: flex;
+      font-family: Montserrat,sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      height: 140px;
+      justify-content: center;
+      left: 140px;
+      line-height: 1.2;
+      position: absolute;
+      text-align: center;
+      top: 140px;
+      width: 140px;
+      z-index: 2;
+    }
+    /* circulo mediano de bajo de todo */
+    .circle::after {
+      background: radial-gradient(circle,#ffc100 0,#fa0 100%);
+      border-radius: 50%;
+      content: "";
+      display: flex;
+      height: 300px;
+      left: 60px;
+      position: absolute;
+      top: 60px;
+      width: 300px;
+      z-index: 0;
+    }
+    /* contenedor de la lista */
+    .circle_list {
+      display: inline-block;
+      height: 420px;
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      position: relative;
+      transform: scale(1) rotate(-55deg);
+      transition: all .3s ease-out;
+      width: 420px;
+      z-index: 1;
+    }
+    /* elemento de lista, cada sector circular */
+    .circle_list li {
+      background: rgb(219, 224, 222);
+      box-shadow: 1px 1px 4px 2px rgb(0 0 0 / 15%);
+      display: block;
+      height: 210px;
+      list-style-type: none;
+      overflow: hidden;
+      position: absolute;
+      transform-origin: 103% 103%;
+      -webkit-transform-origin: 103% 103%;
+      width: 210px;
+    }
+    .circle_list li:first-child {
+      transform: rotate(72deg) skew(18deg);
+    }
+    .circle_list li:nth-child(2) {
+      transform: rotate(144deg) skew(18deg);
+    }
+    .circle_list li:nth-child(3) {
+      transform: rotate(216deg) skew(18deg);
+    }
+    .circle_list li:nth-child(4) {
+      transform: rotate(288deg) skew(18deg);
+    }
+    .circle_list li:nth-child(5) {
+      transform: rotate(1turn) skew(18deg);
+    }
+
+    /* contenido de cada sector circular */
+    .circle_list li a {
+      align-items: center;
+      background: rgb(236, 101, 38);
+      color: #222;
+      display: flex;
+      height: 272.5px;
+      justify-content: center;
+      padding-right: .75rem;
+      text-align: center;
+      transition: .3s ease;
+      width: 262.5px;
+    }
+    .circle_list li a:hover {
+      background: linear-gradient(180deg,#ec3ec7,#f51c1c);
+      box-shadow: inset 0 0 9px 0 rgb(0 0 0 / 50%);
+      color: #fff;
+    }
+    .circle_list li:first-child a {
+      transform: skew(-18deg) rotate(-17deg);
+    }
+    .circle_list li:nth-child(2) a {
+      transform: skew(-18deg) rotate(-89deg);
+    }
+    .circle_list li:nth-child(3) a {
+      transform: skew(-18deg) rotate(-161deg);
+    }
+    .circle_list li:nth-child(4) a {
+      transform: skew(-18deg) rotate(-233deg);
+    }
+    .circle_list li:nth-child(5) a {
+      transform: skew(-18deg) rotate(-305deg);
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="circle">
+      <ol class="circle_list">
+        <li><a href="#">Opción 1</a></li>
+        <li><a href="#">Opción 2</a></li>
+        <li><a href="#">Opción 3</a></li>
+        <li><a href="#">Opción 4</a></li>
+        <li><a href="#">Opción 5</a></li>
+      </ol>
+    </section>
+  </div>
+</body>
+</html>
